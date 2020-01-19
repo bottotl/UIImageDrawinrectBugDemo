@@ -23,8 +23,8 @@
     _contentView = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 200, 200)];
     JFTResizableImageLayer *layer = [[JFTResizableImageLayer alloc] initWithImage:image];
     layer.frame = CGRectMake(0, 0, 200, 200);
-    layer.contentsScale = 2.0;
-//    layer.contentsScale = ceil(2.6087);
+//    layer.contentsScale = 2.0;// no bug
+    layer.contentsScale = 2.6087;// this line will cause bug
     [layer setNeedsDisplay];
     
     [_contentView.layer addSublayer:layer];
